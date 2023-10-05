@@ -103,10 +103,11 @@
   hyphens: manual;
 }
 
-.coverage-selector__text > button {
+.coverage-selector__text div {
+  cursor: pointer;
   outline-color: #ff8d02;
   outline-offset: 0.125rem;
-  padding: 0.125rem;
+  padding: 0.0625rem 0.125rem;
   border: none;
   background-color: #0000;
   font-family: inherit;
@@ -114,6 +115,9 @@
   font-size: 0.75rem;
   line-height: 1.15;
   color: #069;
+  display: inline;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 .coverage-selector__price {

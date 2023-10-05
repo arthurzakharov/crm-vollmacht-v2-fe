@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, KeyboardEvent } from "react";
 import { WarningNotice } from "@atoms/warning-notice";
 import { SubmitButton } from "@molecules/submit-button";
 import { InputCheckbox } from "@molecules/input-checkbox";
@@ -164,6 +164,13 @@ export const CheckoutOldPart = () => {
     dispatch(setIsLeadSwitched(!isLeadSwitched));
   };
 
+  const onLawyerNameKeyDown = (e: KeyboardEvent<HTMLDivElement>): void => {
+    e.preventDefault();
+    if (e.key === "Enter" || e.key === " ") {
+      dispatch(openDialog({ dialog: "compensation-agreement" }));
+    }
+  };
+
   useEffect(() => {
     if (
       oneOf(
@@ -250,17 +257,27 @@ export const CheckoutOldPart = () => {
               <>
                 Für die gerichtliche Vertretung und Wahrnehmung eines Hauptverhandlungstermins in der von Ihnen
                 angegebenen Angelegenheit erhält die{" "}
-                <button onClick={() => dispatch(openDialog({ dialog: "compensation-agreement" }))}>
+                <div
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => dispatch(openDialog({ dialog: "compensation-agreement" }))}
+                  onKeyDown={onLawyerNameKeyDown}
+                >
                   Mathis Ruff Rechtsanwaltsgesellschaft mbH
-                </button>{" "}
+                </div>{" "}
                 eine pauschale Vergütung in folgender Höhe:
               </>
             ) : (
               <>
                 Für die außergerichtliche Vertretung in der von Ihnen angegebenen Angelegenheit erhält die{" "}
-                <button onClick={() => dispatch(openDialog({ dialog: "compensation-agreement" }))}>
+                <div
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => dispatch(openDialog({ dialog: "compensation-agreement" }))}
+                  onKeyDown={onLawyerNameKeyDown}
+                >
                   Mathis Ruff Rechtsanwaltsgesellschaft mbH
-                </button>{" "}
+                </div>{" "}
                 eine pauschale Vergütung in folgender Höhe
               </>
             )}

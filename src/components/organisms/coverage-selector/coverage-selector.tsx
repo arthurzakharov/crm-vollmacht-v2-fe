@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState, MouseEvent } from "react";
+import { ChangeEvent, useEffect, useState, MouseEvent, KeyboardEvent } from "react";
 import { Radio } from "@atoms/radio";
 import { WarningNotice } from "@atoms/warning-notice";
 import { InputCheckbox } from "@molecules/input-checkbox";
@@ -139,6 +139,13 @@ export const CoverageSelector = () => {
     }
   };
 
+  const onLawyerNameKeyDown = (e: KeyboardEvent<HTMLDivElement>): void => {
+    e.preventDefault();
+    if (e.key === "Enter" || e.key === " ") {
+      dispatch(openDialog({ dialog: "compensation-agreement" }));
+    }
+  };
+
   const board = (option: Coverage | null) => {
     switch (option) {
       case "self-pay":
@@ -148,17 +155,27 @@ export const CoverageSelector = () => {
               <p className="coverage-selector__text">
                 Für die gerichtliche Vertretung und Wahrnehmung eines Hauptverhandlungstermins in der von Ihnen
                 angegebenen Angelegenheit erhält die{" "}
-                <button onClick={() => dispatch(openDialog({ dialog: "compensation-agreement" }))}>
+                <div
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => dispatch(openDialog({ dialog: "compensation-agreement" }))}
+                  onKeyDown={onLawyerNameKeyDown}
+                >
                   Mathis Ruff Rechtsanwaltsgesellschaft mbH
-                </button>{" "}
+                </div>{" "}
                 eine pauschale Vergütung in folgender Höhe:
               </p>
             ) : (
               <p className="coverage-selector__text">
                 Für die außergerichtlichen Vertretung in der von mir angegebenen Angelegenheit erhält die{" "}
-                <button onClick={() => dispatch(openDialog({ dialog: "compensation-agreement" }))}>
+                <div
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => dispatch(openDialog({ dialog: "compensation-agreement" }))}
+                  onKeyDown={onLawyerNameKeyDown}
+                >
                   Mathis Ruff Reschtsanwaltsgesellschaft mbH
-                </button>{" "}
+                </div>{" "}
                 eine pauschale Vergütung in folgender Höhe.
               </p>
             )}
