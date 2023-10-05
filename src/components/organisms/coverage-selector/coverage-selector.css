@@ -1,0 +1,195 @@
+.coverage-selector {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.coverage-selector__options {
+  position: relative;
+  margin: 0 0 0.75rem 0;
+  flex-basis: 40%;
+  display: block;
+}
+
+.coverage-selector__option-wrapper {
+  cursor: pointer;
+}
+
+.coverage-selector__option-wrapper label {
+  cursor: pointer;
+}
+
+.coverage-selector__option-wrapper:not(:last-of-type) {
+  margin-bottom: 0.75rem;
+}
+
+.coverage-selector__option {
+  padding: 0.5rem 0.3125rem;
+  min-height: 2.375rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border: 0.125rem solid transparent;
+  border-radius: 0.25rem;
+  background-color: var(--blue-5);
+}
+
+.coverage-selector__option > label {
+  flex-basis: calc(100% - 1.25rem);
+  padding-left: 0.5rem;
+  padding-right: 0.25rem;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--white-1);
+}
+
+.coverage-selector__option .radio {
+  margin-top: 0.0625rem;
+}
+
+.coverage-selector__input {
+  position: absolute;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.coverage-selector__input:focus ~ .coverage-selector__option {
+  border-color: var(--orange-1);
+}
+
+.coverage-selector__input:focus ~ .coverage-selector__option .radio {
+  border-color: var(--orange-1);
+}
+
+.coverage-selector__input:checked ~ .coverage-selector__option {
+  background-color: var(--green-1);
+}
+
+.coverage-selector__board {
+  flex-basis: 60%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 1rem;
+  border: 0.125rem solid var(--gray-15);
+  border-radius: 0.25rem;
+  background-color: var(--white-2);
+}
+
+.coverage-selector__line {
+  margin: 0.75rem 0 0.25rem;
+  width: 100%;
+  border: 0.0625rem solid var(--gray-15);
+}
+
+.coverage-selector__text {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--gray-2);
+  hyphens: manual;
+}
+
+.coverage-selector__text > button {
+  outline-color: #ff8d02;
+  outline-offset: 0.125rem;
+  padding: 0.125rem;
+  border: none;
+  background-color: #0000;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.15;
+  color: #069;
+}
+
+.coverage-selector__price {
+  margin-top: 1.25rem;
+  margin-bottom: 0.625rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #069;
+}
+
+@media screen and (min-width: 768px) {
+  .coverage-selector {
+    flex-direction: row;
+  }
+
+  .coverage-selector__options {
+    margin-bottom: 0;
+    margin-right: 0.5rem;
+  }
+
+  .coverage-selector__board {
+    margin-left: 0.5rem;
+  }
+
+  .coverage-selector__input:checked:focus ~ .coverage-selector__option::after {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    right: -0.6875rem;
+    top: 50%;
+    transform: translateY(-50%);
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 0.5625rem solid transparent;
+    border-bottom: 0.5625rem solid transparent;
+    border-left: 0.5625rem solid var(--orange-1);
+  }
+
+  .coverage-selector__input:checked ~ .coverage-selector__option {
+    position: relative;
+  }
+
+  .coverage-selector__input:checked ~ .coverage-selector__option::before {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    right: -0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid transparent;
+    border-left: 0.5rem solid var(--green-1);
+  }
+}
+
+@media (hover: hover) {
+  .coverage-selector__options:hover input:not(:focus) .coverage-selector__option {
+    border-color: transparent;
+  }
+
+  .coverage-selector__options:hover input:not(:focus) .coverage-selector__option:after {
+    border-left-color: transparent;
+  }
+
+  .coverage-selector__options:hover input:not(:focus) .coverage-selector__option .radio {
+    border-color: transparent;
+  }
+}

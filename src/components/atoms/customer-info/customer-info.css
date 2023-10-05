@@ -1,0 +1,50 @@
+.customer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--gray-2);
+}
+
+.customer-info--sidebar {
+  align-items: stretch;
+  color: var(--blue-1);
+}
+
+.customer-info__navigation {
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--blue-1);
+}
+
+.customer-info__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  outline-color: var(--orange-1);
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--blue-1);
+}
+
+.customer-info__text {
+  margin: 0;
+}
+
+.customer-info__icon {
+  width: 0.75rem;
+  margin-left: 0.5rem;
+}

@@ -1,0 +1,71 @@
+.error-screen {
+  padding: 0.75rem 1rem 0.75rem;
+  background-color: var(--white-1);
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 1;
+  color: var(--gray-2);
+}
+
+.error-screen__h1 {
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+  font-size: 1.875rem;
+}
+
+.error-screen__h2 {
+  margin-bottom: 1.75rem;
+  font-weight: 600;
+  font-size: 1.3125rem;
+}
+
+.error-screen__h3 {
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.error-screen__table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.error-screen__th {
+  padding: 0.5rem;
+  vertical-align: top;
+  border-top: 0.0625rem solid var(--gray-9);
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.error-screen__td {
+  padding: 0.5rem;
+  vertical-align: top;
+  border-top: 0.0625rem solid var(--gray-9);
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+@media screen and (min-width: 768px) {
+  .error-screen {
+    padding: 1rem 1.875rem 1rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .error-screen {
+    padding: 1.25rem 1.875rem 1.25rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .error-screen {
+    padding: 1.5rem 1.875rem 1.5rem;
+  }
+}

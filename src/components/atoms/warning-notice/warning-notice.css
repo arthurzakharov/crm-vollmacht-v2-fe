@@ -1,0 +1,28 @@
+.warning-notice {
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.warning-notice__image {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  margin-right: 0.75rem;
+  width: 1.75rem;
+}
+
+.warning-notice__text {
+  flex-basis: calc(100% - 1.75rem);
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--blue-1);
+}
+
+.warning-notice__title {
+  color: var(--green-2);
+  font-weight: 600;
+}

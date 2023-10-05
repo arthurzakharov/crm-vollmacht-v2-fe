@@ -1,0 +1,143 @@
+.dialog {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.dialog::before {
+  display: block;
+  content: " ";
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  background-color: transparent;
+}
+
+.dialog--top {
+  top: 2.25rem;
+  align-items: flex-start;
+}
+
+.dialog--center {
+  top: 0;
+  align-items: center;
+}
+
+.dialog--visible::before {
+  animation-name: open-bg;
+  animation-duration: 300ms;
+  animation-delay: 0ms;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.dialog--hidden:before {
+  animation-name: close-bg;
+  animation-duration: 300ms;
+  animation-delay: 200ms;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.dialog--visible .dialog__content {
+  animation-name: open;
+  animation-duration: 300ms;
+  animation-delay: 200ms;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.dialog--hidden .dialog__content {
+  animation-name: close;
+  animation-duration: 300ms;
+  animation-delay: 0ms;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.dialog__content {
+  position: relative;
+  z-index: 100;
+  max-height: calc(100% - 10vmin);
+  width: 96%;
+  border-radius: 0.25rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white-1);
+  box-shadow:
+    0 1.1875rem 2.375rem var(--black-4),
+    0 0.9375rem 0.75rem var(--black-5);
+  overflow: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .dialog--s .dialog__content {
+    width: var(--width-dialog-s-tablet);
+  }
+
+  .dialog--m .dialog__content {
+    width: var(--width-dialog-s-laptop);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .dialog--s .dialog__content {
+    width: var(--width-dialog-m-tablet);
+  }
+
+  .dialog--m .dialog__content {
+    width: var(--width-dialog-m-laptop);
+  }
+}
+
+@keyframes open-bg {
+  from {
+    opacity: 0;
+    background-color: transparent;
+  }
+  to {
+    opacity: 1;
+    background-color: var(--black-3);
+  }
+}
+
+@keyframes close-bg {
+  from {
+    opacity: 1;
+    background-color: var(--black-3);
+  }
+  to {
+    opacity: 0;
+    background-color: transparent;
+  }
+}
+
+@keyframes open {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes close {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}

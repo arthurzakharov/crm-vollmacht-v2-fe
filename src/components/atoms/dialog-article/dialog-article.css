@@ -1,0 +1,233 @@
+.dialog-article {
+  position: relative;
+  overflow-y: auto;
+  max-height: calc(100vh - 3.5rem);
+  padding-right: 1.25rem;
+  margin-right: -1.25rem;
+}
+
+.dialog-article__panel {
+  position: fixed;
+  top: 1.75rem;
+  right: 1.625rem;
+  left: 1.625rem;
+  line-height: 0;
+}
+
+.dialog-article__close {
+  position: relative;
+  left: calc(100%);
+  transform: translateX(-100%);
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: none;
+  background-color: transparent;
+  outline-color: var(--orange-1);
+  outline-offset: 0.0625rem;
+}
+
+.dialog-article__close::before,
+.dialog-article__close::after {
+  display: block;
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0.4375rem;
+  left: 0;
+  width: 100%;
+  height: 0.125rem;
+  background-color: var(--blue-2);
+}
+
+.dialog-article__close::before {
+  transform: rotate(45deg);
+}
+
+.dialog-article__close::after {
+  transform: rotate(135deg);
+}
+
+.dialog-article__footer {
+  margin-top: 1.25rem;
+  border-top: 0.0625rem solid var(--gray-3);
+  padding-top: 1.25rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dialog-article__button:not(:first-of-type) {
+  margin-left: 0.5rem;
+}
+
+.dialog-article__button {
+  outline-color: var(--orange-1);
+  border: 0.0625rem solid transparent;
+  border-radius: 0.25rem;
+  padding: 0.625rem 0.9375rem;
+  font-family:
+    Titillium Web,
+    sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.125;
+  transition:
+    background-color 150ms ease-in-out,
+    border-color 150ms ease-in-out;
+}
+
+.dialog-article__button--cancel {
+  color: var(--blue-1);
+  border-color: var(--gray-19);
+}
+
+.dialog-article__button--cancel:hover {
+  background-color: var(--white-3);
+  border-color: var(--gray-20);
+}
+
+.dialog-article__button--confirm {
+  color: var(--white-1);
+  background-color: var(--green-1);
+  border-color: var(--green-3);
+}
+
+.dialog-article__button--confirm:hover {
+  background-color: var(--green-3);
+  border-color: var(--green-4);
+}
+
+.dialog-article .cmp {
+  margin-top: 0.75rem;
+}
+
+.dialog-article .cmp .cmpvendorlist {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 10pt;
+  color: var(--gray-13);
+}
+
+.dialog-article .cmp .cmpvendorlist ul,
+.dialog-article .cmp .cmpvendorlist li {
+  font-size: 10pt;
+}
+
+.dialog-article .cmp .cmpvendorlist a {
+  color: var(--orange-1);
+  text-decoration: none;
+}
+
+.dialog-article .cmp .cmpvendorlistheadertext {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.dialog-article .cmp .cmpvendorlistheader {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), #eeeeee 100%) !important;
+}
+
+.dialog-article .cmp .cmpvendorlistheader:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), #afafaf 100%) !important;
+}
+
+.dialog-article .cmp .cmpvendorinfohl {
+  margin-bottom: 0.5rem;
+}
+
+.dialog-article h1 {
+  margin-bottom: 1.25rem;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-size: 1.75rem;
+  line-height: 1.25;
+  color: var(--blue-1);
+}
+
+.dialog-article h2 {
+  margin-bottom: 0.3125rem;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: var(--blue-1);
+}
+
+.dialog-article h3 {
+  margin-bottom: 0.3125rem;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--blue-1);
+}
+
+.dialog-article h4 {
+  margin-bottom: 0.3125rem;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--blue-1);
+}
+
+.dialog-article p {
+  margin-bottom: 0.75rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--gray-2);
+}
+
+.dialog-article ul {
+  padding-left: 1.875rem;
+  padding-right: 0;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  list-style: disc;
+}
+
+.dialog-article li {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--gray-2);
+}
+
+.dialog-article table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--gray-2);
+}
+
+.dialog-article td {
+  padding-right: 0.5rem;
+}
+
+.dialog-article td:last-of-type {
+  padding-right: 0;
+}
+
+.dialog-article b {
+  font-weight: 600;
+}
+
+.dialog-article a {
+  font-weight: 300;
+  color: var(--blue-1);
+  text-decoration: none;
+}
+
+.dialog-article cite {
+  margin-bottom: 0.75rem;
+}
+
+.dialog-article strong {
+  font-weight: 600;
+}

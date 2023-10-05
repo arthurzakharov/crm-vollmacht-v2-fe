@@ -1,0 +1,226 @@
+.signature {
+  background-color: var(--white-1);
+}
+
+.signature__title {
+  margin-bottom: 0.4375rem;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--gray-2);
+}
+
+.signature__main {
+  padding: 0.75rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: center;
+  height: 6.5rem;
+  border: 0.125rem solid var(--gray-15);
+  border-radius: 0.25rem;
+}
+
+.signature__content {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-basis: 100%;
+}
+
+.signature__x {
+  margin-right: 0.75rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.2;
+  color: var(--black-1);
+  cursor: pointer;
+}
+
+.signature__line {
+  height: 0.0625rem;
+  background-color: var(--blue-9);
+  border: none;
+  width: 100%;
+}
+
+.signature__board {
+  width: 100%;
+  height: 100%;
+}
+
+.signature__panel {
+  width: 100%;
+}
+
+.signature__panel .signature__line {
+  margin-top: 0.1875rem;
+}
+
+.signature__image {
+  width: 100%;
+}
+
+.signature__status {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+}
+
+.signature__loader {
+  width: 3.125rem;
+  fill: var(--orange-1);
+}
+
+.signature__footer {
+  margin-top: 0.375rem;
+}
+
+.signature__auto {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.signature__auto-button {
+  outline: none;
+  position: relative;
+  border: 0.0625rem solid var(--blue-4);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  background-color: var(--white-1);
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-size: 0.6875rem;
+  line-height: 0.875rem;
+  color: var(--blue-4);
+}
+
+.signature__auto-button:focus {
+  border-color: var(--orange-1);
+}
+
+.signature__auto-button:hover {
+  background-color: var(--blue-4);
+  color: var(--white-1);
+  box-shadow: 0 0.625rem 1.25rem var(--black-2);
+}
+
+.signature__auto-button:active {
+  border-color: var(--blue-4);
+}
+
+.signature__auto-button:not(:first-of-type) {
+  margin-left: 0.25rem;
+}
+
+.signature__loader {
+  position: relative;
+  left: 33%;
+  transform: translateX(-50%);
+  display: inline-block;
+}
+
+.signature__manual {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.signature__manual-button {
+  border: none;
+  margin-left: auto;
+  background-color: transparent;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--blue-1);
+  outline-color: var(--orange-1);
+}
+
+.signature__note {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.signature__icon {
+  margin-right: 0.25rem;
+  width: 0.75rem;
+}
+
+.signature__text {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--gray-2);
+  hyphens: manual;
+}
+
+@media screen and (min-width: 375px) {
+  .signature__main {
+    height: 6rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .signature__main {
+    padding: 0.75rem;
+    height: 7.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+
+  .signature__manual {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .signature__x {
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  .signature__line {
+    width: 66%;
+  }
+
+  .signature__image {
+    width: 66%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .signature__main {
+    padding: 1.25rem;
+  }
+
+  .signature__image {
+    width: 100%;
+  }
+}

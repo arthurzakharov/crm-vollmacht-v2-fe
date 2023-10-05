@@ -1,0 +1,127 @@
+.checkout-old-part__checkboxes {
+  margin-bottom: 0.625rem;
+}
+
+.checkout-old-part__signature {
+  margin-bottom: 1.5625rem;
+}
+
+.checkout-old-part__expenses {
+  border-top: 1px solid var(--gray-26);
+  padding-top: 20px;
+}
+
+.checkout-old-part__expenses-title {
+  margin-bottom: 1rem;
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: var(--blue-1);
+}
+
+.checkout-old-part__expenses-info {
+  margin-bottom: 1.25rem;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--gray-2);
+}
+
+.checkout-old-part__expenses-info > button {
+  padding: 0 0.125rem;
+  border: none;
+  background-color: transparent;
+  color: var(--blue-1);
+  font-weight: 400;
+}
+
+.checkout-old-part__expenses-info > button:focus {
+  outline-color: var(--orange-1);
+}
+
+.checkout-old-part__expenses-price {
+  margin-bottom: 1.25rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--blue-1);
+}
+
+.checkout-old-part__expenses-warning {
+  margin-bottom: 1.25rem;
+  padding: 0.625rem;
+  border: 0.125rem solid var(--gray-15);
+  border-radius: 0.25rem;
+  background-color: var(--white-2);
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--blue-1);
+  text-align: center;
+}
+
+.checkout-old-part__expenses-warning > button {
+  padding: 0 0.1875rem;
+  outline-color: var(--orange-1);
+  border: none;
+  background-color: transparent;
+  color: var(--green-1);
+}
+
+.checkout-old-part__expenses-checkbox {
+  margin-top: -0.5rem;
+  margin-bottom: -0.5rem;
+}
+
+.checkout-old-part__warning {
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: 0.125rem solid var(--gray-15);
+  background-color: var(--white-2);
+}
+
+.checkout-old-part__button {
+  margin: 1.75rem 0 0;
+}
+
+.checkout-old-part__question {
+  margin: 1.75rem 0 1.5rem 0;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--blue-1);
+  text-align: center;
+}
+
+.checkout-old-part__question-button {
+  border: none;
+  background-color: transparent;
+  padding: 0 0.1875rem;
+  color: var(--orange-1);
+}
+
+.checkout-old-part__question-button:focus {
+  outline-color: var(--orange-1);
+}
+
+@media screen and (min-width: 768px) {
+  .checkout-old-part__button {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 18.75rem;
+  }
+}

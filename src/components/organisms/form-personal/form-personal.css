@@ -1,0 +1,51 @@
+.form-personal .input {
+  background-color: var(--gray-6);
+}
+
+.form-personal .input::placeholder {
+  color: var(--gray-8);
+}
+
+.form-personal__content {
+  margin-bottom: 1.875rem;
+}
+
+.form-personal__row:not(:last-of-type),
+.form-personal__row > *:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
+.form-personal__action {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .form-personal__row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .form-personal__row > * {
+    flex-basis: 50%;
+  }
+
+  .form-personal__row > *:nth-child(odd) {
+    margin-right: 0.75rem;
+  }
+
+  .form-personal__row > *:nth-child(even) {
+    margin-left: 0.75rem;
+  }
+
+  .form-personal__row > *:only-child {
+    flex-basis: calc(50% - 0.75rem);
+    flex-grow: initial;
+  }
+
+  .form-personal__row > *:not(:last-of-type) {
+    margin-bottom: initial;
+  }
+}

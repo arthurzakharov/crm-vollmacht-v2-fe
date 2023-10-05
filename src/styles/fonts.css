@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 300;
+  src:
+    local(""),
+    url("/fonts/open-sans/open-sans-light-300.ttf") format("truetype"),
+    url("/fonts/open-sans/open-sans-light-300.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local(""),
+    url("/fonts/open-sans/open-sans-regular-400.ttf") format("truetype"),
+    url("/fonts/open-sans/open-sans-regular-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  src:
+    local(""),
+    url("/fonts/open-sans/open-sans-semi-bold-600.ttf") format("truetype"),
+    url("/fonts/open-sans/open-sans-semi-bold-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local(""),
+    url("/fonts/open-sans/open-sans-bold-700.ttf") format("truetype"),
+    url("/fonts/open-sans/open-sans-bold-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 300;
+  src:
+    local(""),
+    url("/fonts/rubik/rubik-light-300.ttf") format("truetype"),
+    url("/fonts/rubik/rubik-light-300.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local(""),
+    url("/fonts/rubik/rubik-regular-400.ttf") format("truetype"),
+    url("/fonts/rubik/rubik-regular-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Titillium Web";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local(""),
+    url("/fonts/titillium-web/titillium-web-regular-400.ttf") format("truetype"),
+    url("/fonts/titillium-web/titillium-web-regular-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Titillium Web";
+  font-style: normal;
+  font-weight: 600;
+  src:
+    local(""),
+    url("/fonts/titillium-web/titillium-web-semi-bold-600.ttf") format("truetype"),
+    url("/fonts/titillium-web/titillium-web-semi-bold-600.woff2") format("woff2");
+}

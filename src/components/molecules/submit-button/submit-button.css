@@ -1,0 +1,73 @@
+.submit-button {
+  outline: none;
+  position: relative;
+  width: 100%;
+  border-radius: 0.25rem;
+  border: 0.0625rem solid var(--orange-1);
+  padding: 0.875rem 0.5rem;
+  background-color: var(--orange-1);
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  letter-spacing: 0.025rem;
+}
+
+.submit-button--idle {
+  color: var(--white-1);
+}
+
+.submit-button--loading {
+  color: transparent;
+}
+
+.submit-button--sidebar-version {
+  padding: 0.875rem 0.5rem;
+  font-size: 1.1875rem;
+}
+
+.submit-button:disabled {
+  cursor: not-allowed;
+  background-color: var(--orange-3);
+  border-color: var(--orange-3);
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: var(--orange-5);
+  border-color: var(--orange-5);
+  box-shadow: 0 0.625rem 1.25rem var(--black-2);
+}
+
+.submit-button:focus {
+  outline: none;
+}
+
+.submit-button:after {
+  position: absolute;
+  z-index: 1;
+  top: 0.0625rem;
+  left: 0.0625rem;
+  width: calc(100% - 0.125rem);
+  height: calc(100% - 0.125rem);
+  display: block;
+  content: "";
+  border-radius: 0.1875rem;
+  border: 0.125rem solid transparent;
+  transition: border-color 150ms ease-in-out;
+}
+
+.submit-button:focus:after {
+  border-color: var(--white-1);
+}
+
+.submit-button:active:after {
+  content: initial;
+}
+
+.submit-button__loader {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

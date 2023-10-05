@@ -1,0 +1,87 @@
+.form-navigation-button {
+  position: relative;
+  border-radius: 0.25rem;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  letter-spacing: 0.025rem;
+  padding: 0.75rem 1.5rem;
+  transition:
+    background-color 150ms ease-in-out,
+    border-color 150ms ease-in-out;
+}
+
+.form-navigation-button:hover {
+  box-shadow: 0 0.625rem 1.25rem var(--black-2);
+}
+
+.form-navigation-button--backward {
+  border: 0.0625rem solid var(--gray-5);
+  background-color: var(--white-1);
+  color: var(--gray-5);
+}
+
+.form-navigation-button--backward:disabled {
+  border-color: color-mix(in srgb, var(--gray-5) 60%, transparent);
+  color: color-mix(in srgb, var(--gray-5) 60%, transparent);
+}
+
+.form-navigation-button--backward:hover {
+  background-color: var(--gray-5);
+  border-color: var(--gray-5);
+  color: var(--gray-9);
+}
+
+.form-navigation-button--forward {
+  border: 0.0625rem solid var(--orange-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--orange-1);
+  color: var(--white-1);
+}
+
+.form-navigation-button--forward:disabled {
+  background-color: color-mix(in srgb, var(--orange-1) 60%, transparent);
+}
+
+.form-navigation-button--forward:hover {
+  background-color: var(--orange-5);
+  border-color: var(--orange-5);
+}
+
+.form-navigation-button--forward:focus {
+  outline: none;
+}
+
+.form-navigation-button--forward:after {
+  position: absolute;
+  z-index: 1;
+  top: 0.125rem;
+  left: 0.125rem;
+  width: calc(100% - 0.25rem);
+  height: calc(100% - 0.25rem);
+  display: block;
+  content: "";
+  border-radius: 0.25rem;
+  border: 0.125rem solid transparent;
+  transition: border-color 150ms ease-in-out;
+}
+
+.form-navigation-button--forward:focus:after {
+  border-color: var(--white-1);
+}
+
+.form-navigation-button:active:after {
+  content: initial;
+}
+
+.form-navigation-button > div {
+  margin-left: 0.625rem;
+  width: 0.875rem;
+  height: 0.875rem;
+  border-right: 0.3125rem solid var(--white-1);
+  border-bottom: 0.3125rem solid var(--white-1);
+  transform: rotate(315deg) translate(0.25rem, 0.25rem);
+}

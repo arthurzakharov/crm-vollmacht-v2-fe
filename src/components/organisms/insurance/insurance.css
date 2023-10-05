@@ -1,0 +1,48 @@
+.insurance {
+  position: relative;
+}
+
+.insurance__content[data-loading="true"] {
+  opacity: 1;
+}
+
+.insurance__content[data-loading="true"] {
+  opacity: 0.25;
+}
+
+.insurance__description {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--gray-2);
+}
+
+.insurance__description > strong {
+  font-weight: 400;
+}
+
+.insurance__questions {
+  padding: 1.25rem 0;
+}
+
+.insurance__question {
+  padding-bottom: 1.5625rem;
+}
+
+.insurance__loading {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gray-23);
+}
+
+.insurance__loading .icon-loading {
+  transform: scale(1.25);
+}

@@ -1,0 +1,99 @@
+.attachment-sections {
+  list-style: none;
+  background-color: var(--white-1);
+}
+
+.attachment-sections__item {
+  position: relative;
+}
+
+.attachment-sections__item:not(:first-of-type) {
+  margin-top: 1.25rem;
+}
+
+.attachment-sections__number {
+  position: absolute;
+  z-index: 1;
+  top: -0.25rem;
+  left: -2.5rem;
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 0 50% 50% 0;
+  padding-right: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Open Sans", sans-serif;
+  color: var(--white-1);
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1;
+  background-color: var(--orange-1);
+}
+
+.attachment-sections__title {
+  cursor: pointer;
+  margin-left: -0.3125rem;
+  padding: 0.0625rem 0.3125rem;
+  display: flex;
+  align-items: center;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: var(--blue-1);
+  outline-color: var(--orange-1);
+}
+
+.attachment-sections__title--opened .attachment-sections__arrow {
+  transform: rotate(180deg);
+}
+
+.attachment-sections__title--closed .attachment-sections__arrow {
+  transform: rotate(0deg);
+}
+
+.attachment-sections__text {
+  user-select: none;
+}
+
+.attachment-sections__arrow {
+  display: block;
+  margin-left: 1rem;
+  width: 0.75rem;
+  transition: transform 300ms cubic-bezier(0.3, 0, 0, 1) 0s;
+}
+
+.attachment-sections__content {
+  position: relative;
+  padding-top: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .attachment-sections__item {
+    padding-left: 3.125rem;
+    padding-bottom: 0.625rem;
+  }
+
+  .attachment-sections__item:not(:first-of-type) {
+    margin-top: 1.5625rem;
+  }
+
+  .attachment-sections__number {
+    border-radius: 50%;
+    padding-right: initial;
+    top: -0.125rem;
+    left: 0.125rem;
+  }
+
+  .attachment-sections__line {
+    position: absolute;
+    z-index: 1;
+    left: -2.125rem;
+    bottom: 0;
+    width: 0.0625rem;
+    height: calc(100% - 2.0625rem);
+    border: none;
+    background-color: var(--orange-1);
+  }
+}
