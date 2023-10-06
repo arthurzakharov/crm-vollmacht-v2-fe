@@ -13,12 +13,8 @@
 }
 
 .form-checkout__info > button {
-  outline-color: var(--orange-1);
-  outline-offset: 0.125rem;
   padding: 0.125rem;
-  border: none;
-  background-color: transparent;
-  font-family: inherit;
+  border-radius: 0.125rem;
   font-weight: 300;
   font-size: 0.75rem;
   line-height: 1.15;

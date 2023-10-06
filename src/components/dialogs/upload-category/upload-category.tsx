@@ -28,7 +28,7 @@ export const UploadCategory = () => {
           Sie erkennen ihn an der Bezeichnung <strong>“Zeugenfragebogen”</strong> oder{" "}
           <strong>“Feststellung des Fahrzeughalters”</strong> prominent in der obern hälfte des Schreibens.
         </p>
-        <button className="upload-category-button" onClick={() => dispatch(closeDialog())}>
+        <button type="button" tabIndex={0} className="upload-category-button" onClick={() => dispatch(closeDialog())}>
           Verstanden, Fenster schließen
         </button>
       </div>

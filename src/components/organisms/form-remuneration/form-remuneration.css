@@ -1,10 +1,14 @@
 .form-remuneration__text {
   font-family: "Open Sans", sans-serif;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 0.75rem;
   line-height: 1.5;
   color: var(--gray-2);
+}
+
+.form-remuneration__text > [role="button"] {
+  color: var(--blue-1);
 }
 
 .form-remuneration__expenses {
@@ -25,15 +29,6 @@
   margin-bottom: 1.25rem;
 }
 
-.form-remuneration__link {
-  color: var(--blue-1);
-}
-
-.form-remuneration__link:focus {
-  outline-color: var(--orange-1);
-  outline-offset: 0.125rem;
-}
-
 .form-remuneration__button {
   margin: 1.75rem 0 0;
 }
@@ -49,12 +44,7 @@
 }
 
 .form-remuneration__info > button {
-  outline-color: var(--orange-1);
-  outline-offset: 0.125rem;
   padding: 0.125rem;
-  border: none;
-  background-color: transparent;
-  font-family: inherit;
   font-weight: 300;
   font-size: 0.75rem;
   line-height: 1.15;

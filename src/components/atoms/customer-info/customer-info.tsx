@@ -39,26 +39,32 @@ export const CustomerInfo = (props: ICustomerInfo) => {
     });
   };
 
+  const getFirstLine = (): string => {
+    return `${firstName} ${lastName} ${birthName}`;
+  };
+
+  const getSecondLine = (): string => {
+    return `Geb in ${birthDate} ${birthCity}`;
+  };
+
+  const getThirdLine = (): string => {
+    return `${street} ${houseNumber}, ${postCode} ${city}`;
+  };
+
   return (
     <div className={customerInfoCn()}>
       <div className="customer-info__navigation">
         Ihre Angaben
-        {isEditButtonVisible() && (
-          <button className="customer-info__button" onClick={goToFormPersonal}>
+        {isEditButtonVisible() ? (
+          <button type="button" tabIndex={0} className="customer-info__button" onClick={goToFormPersonal}>
             <span className="customer-info__text">ändern</span>
             <img alt="pen-icon" src={penSrc} className="customer-info__icon" />
           </button>
-        )}
+        ) : null}
       </div>
-      <p>
-        {firstName} {lastName} {birthName}
-      </p>
-      <p>
-        Geb {birthDate} in {birthCity}
-      </p>
-      <p>
-        {street} {houseNumber}, {postCode} {city}
-      </p>
+      <p>{getFirstLine()}</p>
+      <p>{getSecondLine()}</p>
+      <p>{getThirdLine()}</p>
     </div>
   );
 };

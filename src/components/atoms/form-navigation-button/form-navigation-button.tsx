@@ -16,7 +16,13 @@ export const FormNavigationButton = (props: IFormNavigationButton) => {
   };
 
   return (
-    <button disabled={props.disabled} className={formNavigationButton()} onClick={() => props.onClick()}>
+    <button
+      type="button"
+      tabIndex={0}
+      disabled={props.disabled}
+      className={formNavigationButton()}
+      onClick={() => props.onClick()}
+    >
       {props.type === "forward" ? "Weiter" : "Zurück"}
       {props.type === "forward" && <div />}
     </button>

@@ -11,13 +11,17 @@ export const Header = (props: IHeader) => {
     return "tel:+49" + tel.replace(/^0|[^0-9.]/g, "");
   };
 
+  const onClick = (): void => {
+    window.open(getTelForLink(props.tel), "_self");
+  };
+
   return (
     <header className="header">
       <img alt="logo-icon" src={logoSrc} className="header__logo" />
-      <a href={getTelForLink(props.tel)} className="header__link">
+      <button tabIndex={0} className="header__link" onClick={onClick}>
         <img alt="phone-icon" src={phoneSrc} className="header__phone" />
         <span className="header__number">{props.tel}</span>
-      </a>
+      </button>
     </header>
   );
 };

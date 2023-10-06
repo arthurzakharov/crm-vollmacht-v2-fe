@@ -140,7 +140,6 @@ export const CoverageSelector = () => {
   };
 
   const onLawyerNameKeyDown = (e: KeyboardEvent<HTMLDivElement>): void => {
-    e.preventDefault();
     if (e.key === "Enter" || e.key === " ") {
       dispatch(openDialog({ dialog: "compensation-agreement" }));
     }
@@ -152,32 +151,32 @@ export const CoverageSelector = () => {
         return (
           <>
             {oneOf(["withoutRsv400Court", "alcohol1000", "RA1000"], poaType) ? (
-              <p className="coverage-selector__text">
+              <div className="coverage-selector__text">
                 Für die gerichtliche Vertretung und Wahrnehmung eines Hauptverhandlungstermins in der von Ihnen
                 angegebenen Angelegenheit erhält die{" "}
-                <div
+                <span
                   role="button"
                   tabIndex={0}
                   onClick={() => dispatch(openDialog({ dialog: "compensation-agreement" }))}
                   onKeyDown={onLawyerNameKeyDown}
                 >
                   Mathis Ruff Rechtsanwaltsgesellschaft mbH
-                </div>{" "}
+                </span>{" "}
                 eine pauschale Vergütung in folgender Höhe:
-              </p>
+              </div>
             ) : (
-              <p className="coverage-selector__text">
+              <div className="coverage-selector__text">
                 Für die außergerichtlichen Vertretung in der von mir angegebenen Angelegenheit erhält die{" "}
-                <div
+                <span
                   role="button"
                   tabIndex={0}
                   onClick={() => dispatch(openDialog({ dialog: "compensation-agreement" }))}
                   onKeyDown={onLawyerNameKeyDown}
                 >
                   Mathis Ruff Reschtsanwaltsgesellschaft mbH
-                </div>{" "}
+                </span>{" "}
                 eine pauschale Vergütung in folgender Höhe.
-              </p>
+              </div>
             )}
             <div className="coverage-selector__price">
               <span>Pauschale Vergütung inkl. Steuern</span>
@@ -192,6 +191,8 @@ export const CoverageSelector = () => {
             >
               Die{" "}
               <button
+                type="button"
+                tabIndex={0}
                 onClick={() =>
                   dispatch(
                     openDialog({

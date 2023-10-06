@@ -35,6 +35,7 @@ export const InputRadio = (props: IInputRadio) => {
             name={props.name}
             disabled={props.disabled}
             type="radio"
+            tabIndex={0}
             checked={props.value === option.value}
             className="input-radio__element"
             onFocus={(e) => setFocusedOption(e.target.value)}

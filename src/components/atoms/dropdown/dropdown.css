@@ -21,7 +21,7 @@
 }
 
 .dropdown__button:focus {
-  outline-color: var(--orange-1);
+  outline-offset: -0.125rem !important;
 }
 
 .dropdown__button--neutral {
@@ -106,7 +106,10 @@
   font-size: 0.875rem;
   line-height: 1;
   color: var(--gray-2);
-  outline-color: var(--orange-1);
+}
+
+.dropdown__input:focus {
+  outline: 2px solid var(--orange-1);
 }
 
 .dropdown__magnifier {

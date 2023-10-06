@@ -33,8 +33,10 @@ export const CheckoutNewPart = () => {
           12057 Berlin mit der Vertretung und Verteidigung in Straf- und Bußgeldsachen einschließlich der Vorverfahren
           und erteile hierzu den Rechtsanwälten {caseGroupLawyerNames} der Kanzlei Vollmacht. Die Vollmacht gilt für
           alle Instanzen und umfasst insbesondere die{" "}
-          <button onClick={() => dispatch(openDialog({ dialog: "powers" }))}>Befugnisse</button>, die sie für meine
-          Vertretung benötigen.
+          <button type="button" tabIndex={0} onClick={() => dispatch(openDialog({ dialog: "powers" }))}>
+            Befugnisse
+          </button>
+          , die sie für meine Vertretung benötigen.
         </InputCheckbox>
         <InputCheckbox
           labelSize="s"

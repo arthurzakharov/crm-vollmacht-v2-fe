@@ -83,7 +83,7 @@ export const SubmitButton = (props: ISubmitButton) => {
   };
 
   return (
-    <button disabled={isLeadSigning} className={submitButtonCn()} onClick={onClick}>
+    <button type="button" tabIndex={0} disabled={isLeadSigning} className={submitButtonCn()} onClick={onClick}>
       {isLeadSigning && (
         <div className="submit-button__loader">
           <Loader color="white" />

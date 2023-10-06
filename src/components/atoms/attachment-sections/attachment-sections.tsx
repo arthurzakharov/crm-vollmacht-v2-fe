@@ -1,4 +1,5 @@
 import type { AttachmentSectionName } from "@types";
+import type { MouseEvent } from "react";
 import { useEffect } from "react";
 import { Element, scroller } from "react-scroll";
 import AnimateHeight from "react-animate-height";
@@ -20,6 +21,12 @@ export const AttachmentSections = () => {
     });
   };
 
+  const onTitleClick = (e: MouseEvent<HTMLButtonElement>, name: AttachmentSectionName): void => {
+    const button = e.currentTarget as HTMLButtonElement;
+    button.blur();
+    dispatch(setActiveAttachmentSection(name));
+  };
+
   useEffect(() => {
     if (activeSection === "survey" && hasInsurance) {
       scroller.scrollTo("insurance", {
@@ -38,8 +45,10 @@ export const AttachmentSections = () => {
           <Element name={item.section.name}>
             <div className="attachment-sections__number">{i + 1}</div>
             <button
+              type="button"
+              tabIndex={0}
               className={titleCn(item.section.name)}
-              onClick={() => dispatch(setActiveAttachmentSection(item.section.name))}
+              onClick={(e) => onTitleClick(e, item.section.name)}
             >
               <span className="attachment-sections__text">{item.title}</span>
               <img alt="arrow" src={arrowBlueSrc} className="attachment-sections__arrow" />

@@ -119,6 +119,7 @@ export const Question = <Q extends unknown>({
             sizeRadio="m"
             sizeLabel="m"
             name={name as string}
+            disabled={active !== name}
             onChange={(value: string) => onChange(value, name)}
           />
         )}
@@ -128,6 +129,7 @@ export const Question = <Q extends unknown>({
             value={value}
             name={name as string}
             placeholder={placeholder}
+            disabled={active !== name}
             onChange={(v) => onChange(v, name)}
           />
         )}
@@ -137,6 +139,7 @@ export const Question = <Q extends unknown>({
             rows={rows || 4}
             value={value}
             name={name as string}
+            disabled={active !== name}
             onChange={(value: string) => onChange(value, name)}
           />
         )}
@@ -153,7 +156,9 @@ export const Question = <Q extends unknown>({
       </div>
       {isButtonVisible && (
         <div className="question__next">
-          <button onClick={onClick}>Weiter</button>
+          <button type="button" tabIndex={0} onClick={onClick}>
+            Weiter
+          </button>
           <span>
             oder <i>EINGABE</i> drücken
           </span>

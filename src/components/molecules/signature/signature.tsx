@@ -187,16 +187,16 @@ export const Signature = () => {
               <img alt="check-line" src={checkLineSrc} className="signature__icon" />
               <span className="signature__text">Diese Unterschrift ist ausreichend</span>
             </div>
-            <button className="signature__manual-button" onClick={goToDrawMode}>
+            <button type="button" tabIndex={0} className="signature__manual-button" onClick={goToDrawMode}>
               per Hand/Maus unterschreiben
             </button>
           </div>
         ) : (
           <div className="signature__auto">
-            <button className="signature__auto-button" onClick={goToAutoMode}>
+            <button type="button" tabIndex={0} className="signature__auto-button" onClick={goToAutoMode}>
               Unterschrift digital generieren
             </button>
-            <button className="signature__auto-button" onClick={clearSingPad}>
+            <button type="button" tabIndex={0} className="signature__auto-button" onClick={clearSingPad}>
               Unterschrift zurücksetzen
             </button>
           </div>

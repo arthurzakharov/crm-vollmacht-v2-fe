@@ -42,7 +42,6 @@
   font-size: 1.125rem;
   line-height: 1.5rem;
   color: var(--blue-1);
-  outline-color: var(--orange-1);
 }
 
 .attachment-sections__title--opened .attachment-sections__arrow {

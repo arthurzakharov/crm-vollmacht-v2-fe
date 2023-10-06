@@ -55,13 +55,7 @@
 .label a {
   position: relative;
   z-index: 1;
-  outline-color: var(--orange-1);
   color: var(--blue-1);
-}
-
-.label button {
-  border: none;
-  background-color: transparent;
 }
 
 .label a:hover {

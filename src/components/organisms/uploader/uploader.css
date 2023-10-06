@@ -121,11 +121,8 @@
 
 .uploader__delete {
   margin-left: 0.75rem;
-  border: none;
-  background-color: transparent;
   display: flex;
   padding: 0.25rem 0.125rem;
-  outline-color: var(--orange-1);
 }
 
 .uploader__delete:focus > img:first-of-type,
@@ -188,7 +185,8 @@
   color: var(--orange-1);
 }
 
-.uploader__category-info:hover {
+.uploader__category-info:focus:not(:active) {
+  outline-offset: 0.0625rem;
 }
 
 .uploader__button {

@@ -82,6 +82,8 @@ export const Uploader = () => {
 
   const onInfo = (e: MouseEvent<HTMLButtonElement>): void => {
     e.stopPropagation();
+    const button = e.currentTarget as HTMLButtonElement;
+    button.blur();
     dispatch(openDialog({ dialog: "upload-category", position: "top", size: "m" }));
   };
 
@@ -124,7 +126,7 @@ export const Uploader = () => {
           Perfekt! Übermitteln Sie jetzt bitte <u>das letzte Schreiben</u> das Sie bereits erhalten haben.
         </p>
       ) : (
-        <button className="uploader__more-button" onClick={onMoreButton}>
+        <button type="button" tabIndex={0} className="uploader__more-button" onClick={onMoreButton}>
           <img alt="plus" src={plusSrc} />
           <span>Weiteres Behördenschreiben übermitteln</span>
         </button>
@@ -159,7 +161,12 @@ export const Uploader = () => {
                       <span className="uploader__file-text">
                         {file.name} - {fileSize(file.size)}
                       </span>
-                      <button className="uploader__delete" onClick={(e) => onDelete(e, file.name)}>
+                      <button
+                        type="button"
+                        tabIndex={0}
+                        className="uploader__delete"
+                        onClick={(e) => onDelete(e, file.name)}
+                      >
                         <img alt="trash" src={trashGraySrc} />
                         <img alt="trash" src={trashBlueSrc} />
                       </button>
@@ -179,7 +186,7 @@ export const Uploader = () => {
                     <div className="uploader__category">
                       <h6 className="uploader__category-title">
                         <span>Um welches Behördenschreiben handelt es sich?</span>
-                        <button className="uploader__category-info" onClick={onInfo}>
+                        <button type="button" tabIndex={0} className="uploader__category-info" onClick={onInfo}>
                           i
                         </button>
                       </h6>
@@ -193,7 +200,7 @@ export const Uploader = () => {
                         onChange={onDocumentCategory}
                       />
                     </div>
-                    <button className="uploader__button" onClick={onUpload}>
+                    <button type="button" tabIndex={0} className="uploader__button" onClick={onUpload}>
                       Behördenschreiben übermitteln
                     </button>
                   </>

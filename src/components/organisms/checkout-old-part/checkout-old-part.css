@@ -31,16 +31,10 @@
   color: var(--gray-2);
 }
 
-.checkout-old-part__expenses-info > button {
+.checkout-old-part__expenses-info > span[role="button"] {
   padding: 0 0.125rem;
-  border: none;
-  background-color: transparent;
   color: var(--blue-1);
   font-weight: 400;
-}
-
-.checkout-old-part__expenses-info > button:focus {
-  outline-color: var(--orange-1);
 }
 
 .checkout-old-part__expenses-price {
@@ -74,9 +68,6 @@
 
 .checkout-old-part__expenses-warning > button {
   padding: 0 0.1875rem;
-  outline-color: var(--orange-1);
-  border: none;
-  background-color: transparent;
   color: var(--green-1);
 }
 
@@ -112,10 +103,6 @@
   background-color: transparent;
   padding: 0 0.1875rem;
   color: var(--orange-1);
-}
-
-.checkout-old-part__question-button:focus {
-  outline-color: var(--orange-1);
 }
 
 @media screen and (min-width: 768px) {

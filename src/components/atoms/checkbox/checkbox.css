@@ -10,6 +10,7 @@
   box-shadow:
     inset -1px 0 2px -1px var(--gray-2),
     inset 1px 1px 2px -1px var(--gray-2);
+  outline: 0.125rem solid transparent;
   transition: outline-color 150ms ease-in-out;
 }
 
@@ -26,7 +27,7 @@
 }
 
 .checkbox--focused {
-  outline: 0.125rem solid var(--orange-1);
+  outline-color: var(--orange-1);
 }
 
 .checkbox--not-checked:before {

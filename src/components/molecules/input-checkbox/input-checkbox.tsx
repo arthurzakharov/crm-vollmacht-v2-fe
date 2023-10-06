@@ -39,6 +39,7 @@ export const InputCheckbox = (props: IInputCheckbox) => {
     <div data-id={props.name} className="input-checkbox">
       <input
         type="checkbox"
+        tabIndex={0}
         id={props.name}
         checked={props.value}
         className="input-checkbox__element"

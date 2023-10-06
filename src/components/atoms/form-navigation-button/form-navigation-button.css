@@ -9,6 +9,7 @@
   padding: 0.75rem 1.5rem;
   transition:
     background-color 150ms ease-in-out,
+    box-shadow 150ms ease-in-out,
     border-color 150ms ease-in-out;
 }
 
@@ -33,6 +34,10 @@
   color: var(--gray-9);
 }
 
+.form-navigation-button--backward:focus:not(:active) {
+  outline-offset: -0.125rem;
+}
+
 .form-navigation-button--forward {
   border: 0.0625rem solid var(--orange-1);
   display: flex;
@@ -51,10 +56,6 @@
   border-color: var(--orange-5);
 }
 
-.form-navigation-button--forward:focus {
-  outline: none;
-}
-
 .form-navigation-button--forward:after {
   position: absolute;
   z-index: 1;
@@ -69,11 +70,15 @@
   transition: border-color 150ms ease-in-out;
 }
 
-.form-navigation-button--forward:focus:after {
+.form-navigation-button--forward:focus:not(:active) {
+  outline: none;
+}
+
+.form-navigation-button--forward:focus:not(:active):after {
   border-color: var(--white-1);
 }
 
-.form-navigation-button:active:after {
+.form-navigation-button:active:not(:active):after {
   content: initial;
 }
 

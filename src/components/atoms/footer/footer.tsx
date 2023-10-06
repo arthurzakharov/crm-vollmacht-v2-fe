@@ -17,10 +17,10 @@ export const Footer = (props: IFooter) => (
       <ul className="footer__links">
         {props.links.map((link: FooterLink) => (
           <li key={link.text} className="footer__link">
-            <button className="footer__button" onClick={link.onClick}>
+            <button type="button" tabIndex={0} onClick={link.onClick}>
               {link.text}
             </button>
-            <div className="footer__line" />
+            <div className="footer__separator" />
           </li>
         ))}
       </ul>

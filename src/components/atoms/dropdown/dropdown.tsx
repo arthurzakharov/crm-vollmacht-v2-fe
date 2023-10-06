@@ -53,6 +53,8 @@ export const Dropdown = (props: IDropdown) => {
     label.toLowerCase().includes(debouncedSearch.toLowerCase());
 
   const onButtonClick = (e: MouseEvent<HTMLButtonElement>): void => {
+    const button = e.currentTarget as HTMLButtonElement;
+    button.blur();
     if (props.stopPropagation) e.stopPropagation();
     toggleIsOpen();
   };
@@ -107,7 +109,7 @@ export const Dropdown = (props: IDropdown) => {
 
   return (
     <div ref={dropdownRef} className="dropdown">
-      <button className={buttonCn()} onClick={onButtonClick}>
+      <button type="button" tabIndex={0} className={buttonCn()} onClick={onButtonClick}>
         <span dangerouslySetInnerHTML={{ __html: getButtonText() }} className="dropdown__value" />
         <div className="dropdown__shade">
           <img alt="arrow" src={arrowGraySrc} className="dropdown__arrow" />
@@ -123,6 +125,7 @@ export const Dropdown = (props: IDropdown) => {
                 title="Suchen"
                 type="text"
                 className="dropdown__input"
+                tabIndex={isOpen ? 0 : -1}
                 onChange={(e) => setSearch(e.target.value)}
               />
               <img alt="search" src={searchSrc} className="dropdown__magnifier" />

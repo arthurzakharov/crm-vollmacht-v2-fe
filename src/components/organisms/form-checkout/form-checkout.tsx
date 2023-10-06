@@ -25,9 +25,14 @@ export const FormCheckout = () => {
       {useNewVersion && <CheckoutNewPart />}
       <div className="form-checkout__info">
         Es gelten unsere{" "}
-        <button onClick={() => dispatch(openDialog({ dialog: "mandate-condition" }))}>Mandatsbedingungen</button>. Hier
-        finden Sie auch unsere{" "}
-        <button onClick={() => dispatch(openDialog({ dialog: "right-for-refund" }))}>Widerrufsbelehrung</button>.
+        <button type="button" tabIndex={0} onClick={() => dispatch(openDialog({ dialog: "mandate-condition" }))}>
+          Mandatsbedingungen
+        </button>
+        . Hier finden Sie auch unsere{" "}
+        <button type="button" tabIndex={0} onClick={() => dispatch(openDialog({ dialog: "right-for-refund" }))}>
+          Widerrufsbelehrung
+        </button>
+        .
       </div>
       <div className="form-checkout__logos">
         <Logos />

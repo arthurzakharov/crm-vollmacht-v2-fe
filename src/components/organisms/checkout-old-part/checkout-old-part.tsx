@@ -165,7 +165,6 @@ export const CheckoutOldPart = () => {
   };
 
   const onLawyerNameKeyDown = (e: KeyboardEvent<HTMLDivElement>): void => {
-    e.preventDefault();
     if (e.key === "Enter" || e.key === " ") {
       dispatch(openDialog({ dialog: "compensation-agreement" }));
     }
@@ -218,8 +217,10 @@ export const CheckoutOldPart = () => {
           12057 Berlin mit der Vertretung und Verteidigung in Straf- und Bußgeldsachen einschließlich der Vorverfahren
           und erteile hierzu den Rechtsanwälten {caseGroupLawyerNames} der Kanzlei Vollmacht. Die Vollmacht gilt für
           alle Instanzen und umfasst insbesondere die{" "}
-          <button onClick={() => dispatch(openDialog({ dialog: "powers" }))}>Befugnisse</button>, die sie für meine
-          Vertretung benötigen.
+          <button type="button" tabIndex={0} onClick={() => dispatch(openDialog({ dialog: "powers" }))}>
+            Befugnisse
+          </button>
+          , die sie für meine Vertretung benötigen.
         </InputCheckbox>
         {isAgreedToLawInsuranceRequestVisible() && (
           <InputCheckbox
@@ -257,27 +258,27 @@ export const CheckoutOldPart = () => {
               <>
                 Für die gerichtliche Vertretung und Wahrnehmung eines Hauptverhandlungstermins in der von Ihnen
                 angegebenen Angelegenheit erhält die{" "}
-                <div
+                <span
                   role="button"
                   tabIndex={0}
                   onClick={() => dispatch(openDialog({ dialog: "compensation-agreement" }))}
                   onKeyDown={onLawyerNameKeyDown}
                 >
                   Mathis Ruff Rechtsanwaltsgesellschaft mbH
-                </div>{" "}
+                </span>{" "}
                 eine pauschale Vergütung in folgender Höhe:
               </>
             ) : (
               <>
                 Für die außergerichtliche Vertretung in der von Ihnen angegebenen Angelegenheit erhält die{" "}
-                <div
+                <span
                   role="button"
                   tabIndex={0}
                   onClick={() => dispatch(openDialog({ dialog: "compensation-agreement" }))}
                   onKeyDown={onLawyerNameKeyDown}
                 >
                   Mathis Ruff Rechtsanwaltsgesellschaft mbH
-                </div>{" "}
+                </span>{" "}
                 eine pauschale Vergütung in folgender Höhe
               </>
             )}
@@ -289,7 +290,9 @@ export const CheckoutOldPart = () => {
           {isExpensesWarningVisible() && (
             <div className="checkout-old-part__expenses-warning">
               <p>Sind Sie doch rechtsschutzversichert?</p>
-              <button onClick={onButtonExpensesClick}>Dann klicken Sie hier.</button>
+              <button type="button" tabIndex={0} onClick={onButtonExpensesClick}>
+                Dann klicken Sie hier.
+              </button>
             </div>
           )}
           <div className="checkout-old-part__expenses-checkbox">
@@ -302,6 +305,8 @@ export const CheckoutOldPart = () => {
             >
               Die{" "}
               <button
+                type="button"
+                tabIndex={0}
                 onClick={() =>
                   dispatch(
                     openDialog({
@@ -328,7 +333,12 @@ export const CheckoutOldPart = () => {
       {isQuestionVisible() && (
         <div className="checkout-old-part__question">
           <p>Doch nicht rechtsschutzversichert?</p>
-          <button className="checkout-old-part__question-button" onClick={onButtonQuestionClick}>
+          <button
+            type="button"
+            tabIndex={0}
+            className="checkout-old-part__question-button"
+            onClick={onButtonQuestionClick}
+          >
             Dann klicken Sie hier.
           </button>
         </div>

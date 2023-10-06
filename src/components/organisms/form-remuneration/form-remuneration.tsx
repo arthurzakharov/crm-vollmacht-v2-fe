@@ -23,12 +23,14 @@ export const FormRemuneration = () => {
     <div className="form-remuneration">
       <p className="form-remuneration__text">
         Für die außergerichtlichen Vertretung in der von mir angegebenen Angelegenheit erhält die{" "}
-        <button
+        <span
+          role="button"
+          tabIndex={0}
           className="form-remuneration__link"
           onClick={() => dispatch(openDialog({ dialog: "compensation-agreement" }))}
         >
           Mathis Ruff Reschtsanwaltsgesellschaft mbH
-        </button>{" "}
+        </span>{" "}
         eine pauschale Vergütung in folgender Höhe.
       </p>
       <div className="form-remuneration__expenses">
@@ -44,7 +46,11 @@ export const FormRemuneration = () => {
           onChange={() => dispatch(setRemunerationAgreement(!value))}
         >
           Die{" "}
-          <button onClick={() => dispatch(openDialog({ dialog: "compensation-agreement-on-penalties" }))}>
+          <button
+            type="button"
+            tabIndex={0}
+            onClick={() => dispatch(openDialog({ dialog: "compensation-agreement-on-penalties" }))}
+          >
             Vergütungsvereinbarung
           </button>{" "}
           habe ich zur Kenntnis genommen und stimme dieser zu.
@@ -56,9 +62,14 @@ export const FormRemuneration = () => {
       </div>
       <div className="form-remuneration__info">
         Es gelten unsere{" "}
-        <button onClick={() => dispatch(openDialog({ dialog: "mandate-condition" }))}>Mandatsbedingungen</button>. Hier
-        finden Sie auch unsere{" "}
-        <button onClick={() => dispatch(openDialog({ dialog: "right-for-refund" }))}>Widerrufsbelehrung</button>.
+        <button type="button" tabIndex={0} onClick={() => dispatch(openDialog({ dialog: "mandate-condition" }))}>
+          Mandatsbedingungen
+        </button>
+        . Hier finden Sie auch unsere{" "}
+        <button type="button" tabIndex={0} onClick={() => dispatch(openDialog({ dialog: "right-for-refund" }))}>
+          Widerrufsbelehrung
+        </button>
+        .
       </div>
       <div className="form-remuneration__logos">
         <Logos />

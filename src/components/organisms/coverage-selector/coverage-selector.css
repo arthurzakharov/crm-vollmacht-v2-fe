@@ -103,14 +103,9 @@
   hyphens: manual;
 }
 
-.coverage-selector__text div {
+.coverage-selector__text > span[role="button"] {
   cursor: pointer;
-  outline-color: #ff8d02;
-  outline-offset: 0.125rem;
   padding: 0.0625rem 0.125rem;
-  border: none;
-  background-color: #0000;
-  font-family: inherit;
   font-weight: 400;
   font-size: 0.75rem;
   line-height: 1.15;
