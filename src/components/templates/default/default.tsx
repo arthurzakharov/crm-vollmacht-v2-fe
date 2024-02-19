@@ -1,12 +1,13 @@
 import { PropsWithChildren, ReactNode } from "react";
+import { Header } from "crm-vollmacht-ui";
 import { ErrorScreen } from "@atoms/error-screen";
 import { Footer } from "@atoms/footer";
-import { Header } from "@atoms/header";
 import { Loader } from "@atoms/loader";
 import { Sidebar } from "@organisms/sidebar";
 import { useAppSelector } from "@redux/store";
 import { selectTemplateDefaultData } from "@redux/selectors";
 import { useFooterLinks } from "@hooks/useFooterLinks";
+import logoSrc from "/png/logo.png";
 import "./default.css";
 
 export const Default = (props: PropsWithChildren) => {
@@ -35,7 +36,7 @@ export const Default = (props: PropsWithChildren) => {
   return (
     <div className="default">
       <div className="default__header">
-        <Header tel="030 / 20 898 12 11" />
+        <Header logo={logoSrc} tel="ass" />
       </div>
       {getContent(props.children)}
       <div className="default__footer">

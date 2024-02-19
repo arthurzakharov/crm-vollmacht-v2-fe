@@ -1,7 +1,8 @@
 import { PropsWithChildren } from "react";
-import { Header } from "@atoms/header";
+import { Header } from "crm-vollmacht-ui";
 import { Footer } from "@atoms/footer";
 import { useFooterLinks } from "@hooks/useFooterLinks";
+import logoSrc from "/png/logo.png";
 import "./plain.css";
 
 export const Plain = (props: PropsWithChildren) => {
@@ -10,7 +11,7 @@ export const Plain = (props: PropsWithChildren) => {
   return (
     <div className="plain">
       <div className="plain__header">
-        <Header tel="030 / 20 898 12 11" />
+        <Header logo={logoSrc} tel="030 / 20 898 12 11" />
       </div>
       {props.children}
       <div className="plain__footer">

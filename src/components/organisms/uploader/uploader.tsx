@@ -1,45 +1,23 @@
 import type { MouseEvent } from "react";
-import { useEffect, useState } from "react";
 import type { FileRejection } from "react-dropzone";
 import Dropzone from "react-dropzone";
 import AnimateHeight from "react-animate-height";
 import cn from "classnames";
-import { Dropdown } from "@atoms/dropdown";
 import { Loader } from "@atoms/loader";
 import { useAppDispatch, useAppSelector } from "@redux/store";
-import { openDialog, setFilesCategory, setFilesToUpload, setFilesUploadingMore } from "@redux/slice";
+import { openDialog, setFilesToUpload } from "@redux/slice";
 import { selectUploaderData } from "@redux/selectors";
 import { fileSize } from "@utils/application";
 import uploadSrc from "/png/upload.png";
 import trashGraySrc from "/png/trash-gray.png";
 import trashBlueSrc from "/png/trash-blue.png";
 import fileSrc from "/png/file.png";
-import plusSrc from "/png/plus.png";
 import checkSrc from "/png/check.png";
 import "./uploader.css";
-
-const TOPICS = [
-  {
-    value: "penaltyNoteLetter",
-    label: "Bußgeldbescheid",
-  },
-  {
-    value: "lawHearingLetter",
-    label: "Anhörungsbogen",
-  },
-  {
-    value: "witnessQuestionnaire",
-    label: "Zeugenfragebogen",
-  },
-  {
-    value: "unknown",
-    label: "Sonstiges / Unsicher",
-  },
-];
+import { useEffect } from "react";
 
 export const Uploader = () => {
-  const [uploadedFiles, setUploadedList] = useState<string[]>([]);
-  const { list, filesToUpload, category, uploadingMore, status } = useAppSelector(selectUploaderData);
+  const { list, filesToUpload, status } = useAppSelector(selectUploaderData);
   const dispatch = useAppDispatch();
 
   const onDrop = (acceptedFiles: File[], rejectedFiles: FileRejection[]): void => {
@@ -76,48 +54,15 @@ export const Uploader = () => {
     dispatch(openDialog({ dialog: "upload-confirmation", position: "top", size: "s" }));
   };
 
-  const onDocumentCategory = (category: string): void => {
-    dispatch(setFilesCategory(category));
-  };
-
-  const onInfo = (e: MouseEvent<HTMLButtonElement>): void => {
-    e.stopPropagation();
-    const button = e.currentTarget as HTMLButtonElement;
-    button.blur();
-    dispatch(openDialog({ dialog: "upload-category", position: "top", size: "m" }));
-  };
-
-  const onMoreButton = (e: MouseEvent<HTMLButtonElement>): void => {
-    e.preventDefault();
-    dispatch(setFilesUploadingMore(true));
-  };
-
-  const isDragAndDropVisible = (): boolean => !list.length || uploadingMore;
+  const isDragAndDropVisible = (): boolean => !list.length;
 
   useEffect(() => {
-    const formattedList = list
-      .map((d: string) => {
-        switch (d) {
-          case "penaltyNoteLetter":
-            return "Bußgeldbescheid";
-          case "lawHearingLetter":
-            return "Anhörungsbogen";
-          case "witnessQuestionnaire":
-            return "Zeugenfragebogen";
-          default:
-            return "Behördenschreiben";
-        }
-      })
-      .map((d, index, arr) => {
-        const arrayOfIndexes = arr.reduce((result: number[], item: string, index: number) => {
-          if (item === d) result.push(index);
-          return result;
-        }, []);
-        const dPosition = arrayOfIndexes.indexOf(index);
-        return dPosition > 0 ? `${d} #${dPosition + 1}` : d;
-      });
-    setUploadedList(formattedList);
-  }, [list]);
+    console.log("list", list);
+    console.log("filesToUpload", filesToUpload);
+    console.log("status", status);
+  });
+
+  console.log("isDragAndDropVisible", isDragAndDropVisible());
 
   return (
     <div className="uploader">
@@ -125,12 +70,7 @@ export const Uploader = () => {
         <p className="uploader__title">
           Perfekt! Übermitteln Sie jetzt bitte <u>das letzte Schreiben</u> das Sie bereits erhalten haben.
         </p>
-      ) : (
-        <button type="button" tabIndex={0} className="uploader__more-button" onClick={onMoreButton}>
-          <img alt="plus" src={plusSrc} />
-          <span>Weiteres Behördenschreiben übermitteln</span>
-        </button>
-      )}
+      ) : null}
       <AnimateHeight height={isDragAndDropVisible() ? "auto" : 0}>
         <Dropzone
           noKeyboard
@@ -183,23 +123,6 @@ export const Uploader = () => {
                 </div>
                 {!!filesToUpload.length && (
                   <>
-                    <div className="uploader__category">
-                      <h6 className="uploader__category-title">
-                        <span>Um welches Behördenschreiben handelt es sich?</span>
-                        <button type="button" tabIndex={0} className="uploader__category-info" onClick={onInfo}>
-                          i
-                        </button>
-                      </h6>
-                      <Dropdown
-                        status="neutral"
-                        isSearchHidden
-                        stopPropagation
-                        placeholder="Dokumententyp auswählen ..."
-                        options={TOPICS}
-                        value={category || ""}
-                        onChange={onDocumentCategory}
-                      />
-                    </div>
                     <button type="button" tabIndex={0} className="uploader__button" onClick={onUpload}>
                       Behördenschreiben übermitteln
                     </button>
@@ -215,15 +138,11 @@ export const Uploader = () => {
           )}
         </Dropzone>
       </AnimateHeight>
-      {!!uploadedFiles.length && (
-        <div
-          className={cn("uploader__uploaded-files", {
-            "uploader__uploaded-files--with-margin": isDragAndDropVisible(),
-          })}
-        >
+      {!!list.length && (
+        <div className="uploader__uploaded-files">
           <h6>Bereits übermittelt</h6>
           <ul>
-            {uploadedFiles.map((uploadedFile: string) => (
+            {list.map((uploadedFile: string) => (
               <li key={uploadedFile}>
                 <span>{uploadedFile}</span>
                 <img alt="check" src={checkSrc} />

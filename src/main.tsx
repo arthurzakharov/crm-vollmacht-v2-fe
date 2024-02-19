@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import { Dialog } from "@atoms/dialog";
 import { store } from "@redux/store";
 import { routes } from "@routes";
+import "crm-vollmacht-ui/dist/cjs/styles.css";
 import "./styles/fonts.css";
 import "./styles/global.css";
 import "./styles/custom.variables.css";
